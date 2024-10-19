@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Nexon</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            flex-basis: 35%;
+            padding-right: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .details {
+            flex-basis: 65%;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: #ffa500;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .description {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .specs-section {
+            margin-top: 30px;
+        }
+        .specs-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .specs-tabs {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .specs-tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-bottom: 2px solid transparent;
+        }
+        .specs-tab.active {
+            border-bottom: 2px solid #ff7f50;
+            color: #ff7f50;
+        }
+        .specs-content {
+            display: none;
+        }
+        .specs-content.active {
+            display: block;
+        }
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .spec-label {
+            font-size: 14px;
+            color: #666;
+        }
+        .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/53069/2023-GMC-Yukon-front_53069_032_2400x1800_G1W.png" alt="GMC Denali">
+        </div>
+        <div class="details">
+            <h1>GMC Denali</h1>
+            <div class="rating">★★★☆☆ (750 Reviews)</div>
+            <p class="description">
+                The GMC Denali stands out as a premium SUV, known for its rugged elegance and powerful performance. With its luxurious interior, cutting-edge technology, and advanced safety features, it offers an unparalleled driving experience. The Denali combines style and functionality, making it a top choice for those seeking both comfort and capability on the road.
+            </p>
+            <div class="price">₹ 72 - 80 Lakh*</div>
+
+            <div class="specs-section">
+                <h2 class="specs-title">Specifications & Features</h2>
+                <div class="specs-tabs">
+                    <div class="specs-tab active" data-tab="specs">Key Specifications</div>
+                    <div class="specs-tab" data-tab="features">Top Features</div>
+                    <div class="specs-tab" data-tab="standout">Standout Features</div>
+                </div>
+                
+                <div class="specs-content active" id="specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Engine:</div>
+                        <div class="spec-value">6200cc</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Mileage:</div>
+                        <div class="spec-value">6.4 kmpl</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Transmission:</div>
+                        <div class="spec-value">Automatic</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Fuel Type:</div>
+                        <div class="spec-value">Gasoline</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Seating Capacity:</div>
+                        <div class="spec-value">5</div>
+                    </div>
+                </div>
+                
+                <div class="specs-content" id="features">
+                    <div class="spec-item">
+                        <div class="spec-label">Sunroof:</div>
+                        <div class="spec-value">Yes</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Touchscreen Display:</div>
+                        <div class="spec-value">13.4-inch</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Cruise Control:</div>
+                        <div class="spec-value">Yes</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Rear Camera:</div>
+                        <div class="spec-value">Yes</div>
+                    </div>
+                </div>
+                
+                <div class="specs-content" id="standout">
+                    <div class="spec-item">
+                        <div class="spec-label">Advanced Safety:</div>
+                        <div class="spec-value">ABS with EBD</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Airbags:</div>
+                        <div class="spec-value">Dual Front Airbags</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">NCAP Rating:</div>
+                        <div class="spec-value">5-Star</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.specs-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.specs-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.specs-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
